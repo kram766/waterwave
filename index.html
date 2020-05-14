@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>waterdrops&waves</title>
+</head>
+<body>
+    <div class="preloader">
+        <h2>loading...</h2>
+    </div>
+    <div class="drops lightblue"></div>
+    <div class="drops lightblue"></div>
+    <div class="box">
+        <div class="wave lightblue"></div>
+    </div>
+    <div class="hill">
+        <div class="handle"></div>
+    </div>
+
+    <script>
+        var wave = document.querySelector('.wave');
+        var bottom = -170;
+
+        window.addEventListener('load',function(){
+            var Loader = document.querySelector('.preloader');
+            if(Loader){
+                Loader.style.display = "none";
+
+            }
+            move();
+        });
+    
+       function move(){
+            var id= setInterval(frame,2000);
+
+           function frame(){
+               if(bottom>=-120){
+                   wave.style.bottom=bottom+"%";
+                   bottom=bottom-25;
+               }else{
+                   wave.style.bottom=bottom+"%";
+                   bottom=bottom-(-15);
+               }
+
+           }
+       }
+
+    </script>
+</body>
+</html>
